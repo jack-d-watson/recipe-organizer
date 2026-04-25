@@ -27,8 +27,7 @@ recipe-organizer/
 | Path | Purpose |
 |---|---|
 | `src/pages/_app.tsx` | Root app shell — wraps everything in `ChakraProvider` |
-| `src/pages/index.tsx` | Home page — lists all recipes |
-| `src/components/RecipeCard/` | Recipe card component + Storybook stories |
+| `src/pages/index.tsx` | Home page |
 | `.storybook/` | Storybook configuration |
 
 ## Backend (`backend/`)
@@ -42,7 +41,6 @@ recipe-organizer/
 | Path | Purpose |
 |---|---|
 | `src/index.ts` | Express app entry point |
-| `src/routes/recipes.ts` | Recipe CRUD routes |
 | `src/__tests__/` | Jest tests |
 
 ## Data Flow
@@ -50,5 +48,3 @@ recipe-organizer/
 ```
 Browser → Next.js (port 3000) → Express API (port 4000)
 ```
-
-The frontend fetches recipes from `http://localhost:4000/api/recipes` and renders them using the `RecipeCard` component.

@@ -1,6 +1,5 @@
 import express from 'express';
 import cors from 'cors';
-import recipesRouter from './routes/recipes';
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -12,12 +11,9 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok' });
 });
 
-app.use('/api/recipes', recipesRouter);
+// app.get('/api/', (_req, res) => {
+//   res.json("Hello World");
+// });
 
-if (require.main === module) {
-  app.listen(PORT, () => {
-    console.log(`Backend running on http://localhost:${PORT}`);
-  });
-}
 
 export default app;
